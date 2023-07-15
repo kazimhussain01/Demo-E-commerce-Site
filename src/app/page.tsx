@@ -9,9 +9,9 @@ const Product = ()=> {
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 place-items-center lg:px-20 gap-8 mt-4">
                 {Products.map((product)=> {
                     return(
-                        <div className="md:px-4" key={product.id}>
+                        <div key={product.id}>
                             <Link href={`/productdetail/${product.id}`}>
-                            <Image className="transform hover:scale-90 ease-in-out duration-300 lg:h-[22rem] w-96 my-4" src={product.Image} 
+                            <Image className="transform hover:scale-90 ease-in-out duration-300 lg:h-[24rem] lg:w-96 md:h-[22rem] w-80 my-4" src={product.Image} 
                             alt="product1"
                             width={300}
                             height={300}

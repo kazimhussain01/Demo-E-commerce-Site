@@ -27,8 +27,8 @@ export default function Page({ params }: {params: {id: number} }){
               return (
                   <div key={product.id} className="lg:flex justify-between gap-6">
                       {/* Left Image */}
-                      <div>
-                          <Image className="rounded-xl lg:w-[42rem] lg:h-[43rem] w-[50rem] md:h-[43rem] h-[27rem]" src={product.Image} alt={product.name}
+                      <div className="p-3">
+                          <Image className="rounded-xl lg:w-[42rem] lg:h-[43rem] w-[50rem] md:h-[40rem] h-[23rem]" src={product.Image} alt={product.name}
                               width={500}
                               height={500} />
                       </div>
