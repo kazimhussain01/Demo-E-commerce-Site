@@ -1,10 +1,12 @@
+'use client'
 import Link from "next/link"
-import Image from "next/image"
-import Head from "next/head"
-
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/store/store";
 
 
 const Header = ()=> {
+  const cartValue = useSelector(
+    (state: RootState) => state.cart.totalQuantity)
     return(
         <div className="relative ml-2 mt-2 border h-12 w-12 justify-center items-center rounded-full center bg-gray-200">
           <Link href="/cart">
@@ -19,7 +21,7 @@ const Header = ()=> {
           </svg>
           </Link>
           <span className="absolute ml-4 top-1 rounded-full bg-red-600 px-1 text-white text-xs">
-            {0}
+            {cartValue}
           </span>
         </div>
     )

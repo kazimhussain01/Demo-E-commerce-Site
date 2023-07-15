@@ -1,8 +1,11 @@
+'use client'
 import Quantity from "@/utils/Quantity"
 import Product from "@/utils/mock"
 import { StaticImageData } from "next/image"
 import Image from "next/image"
-import AddtoCart from "@/app/cart/page"
+import { useDispatch } from "react-redux"
+import { cartActions } from "@/app/store/slices/cartSlice"
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const getProductDetail = (id: number) => {
@@ -12,6 +15,11 @@ const getProductDetail = (id: number) => {
 const sizes = ["xs", "sm", "md", "lg", "xl"]
 export default function Page({ params }: {params: {id: number} }){
     const result = getProductDetail(params.id)
+    const dispatch = useDispatch();
+    const addItems = () => {
+        dispatch(cartActions.addToCart({ quantity : 1 }));
+        toast.success("Product Add to Cart")
+    };
     
     return (
         <div className="flex py-16 lg:px-12 justify-between">
@@ -57,7 +65,7 @@ export default function Page({ params }: {params: {id: number} }){
                               </div>
                             {/* Add To Cart Button */}
                             <div className="py-6">
-                            <button className="font-bold font-sans text-2xl px-2 py-2 bg-indigo-800 rounded-lg text-white">Add to Cart</button>
+                            <button onClick={addItems} className="font-bold font-sans text-2xl px-2 py-2 bg-indigo-800 rounded-lg text-white">Add to Cart</button>
                             </div>
                         </div>
                       </div>
