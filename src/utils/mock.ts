@@ -36,7 +36,7 @@ const Product = [
         producttype: "T Shirt",
         price: "$75",
         Image: "/productcard5.webp",
-        Category: "female",
+        Category: "kids",
         id: 5
     },
     {
@@ -44,7 +44,7 @@ const Product = [
         producttype: "Pants",
         price: "$175",
         Image: "/productcard6.webp",
-        Category: "female",
+        Category: "male",
         id: 6
     },
 ]

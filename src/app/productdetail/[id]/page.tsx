@@ -1,7 +1,6 @@
 'use client'
 import Quantity from "@/utils/Quantity"
 import Product from "@/utils/mock"
-import { StaticImageData } from "next/image"
 import Image from "next/image"
 import { useDispatch } from "react-redux"
 import { cartActions } from "@/app/store/slices/cartSlice"
@@ -13,6 +12,7 @@ const getProductDetail = (id: number) => {
 }
 
 const sizes = ["xs", "sm", "md", "lg", "xl"]
+
 export default function Page({ params }: {params: {id: number} }){
     const result = getProductDetail(params.id)
     const dispatch = useDispatch();
@@ -32,6 +32,7 @@ export default function Page({ params }: {params: {id: number} }){
                               width={500}
                               height={500} />
                       </div>
+                      
                       {/* Right Content */}
                       <div className="lg:ml-10">
                           <div className="py-10">
@@ -59,6 +60,8 @@ export default function Page({ params }: {params: {id: number} }){
                                   <h3 className="text-lg font-bold font-sans">Quantity:</h3>
                                   <Quantity />
                               </div>
+
+                              { /* Total */ }
                               <div className="flex text-xl mt-6 font-bold font-sans gap-6 items-center">
                                Total: 
                                <span className="text-xl font-bold">{product.price}</span>

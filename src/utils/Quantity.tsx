@@ -17,7 +17,7 @@ const Quantity = () => {
         -
       </button>
       {/* Number */}
-      <span className='text-md'>{num}</span>
+      <span className='text-lg'>{num}</span>
       {/* Plus */}
       <button className='border h-8 w-8 text-xl rounded-full center cursor-pointer bg-gray-200'
       onClick={() => {
